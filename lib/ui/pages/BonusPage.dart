@@ -23,28 +23,117 @@ class BonusPage extends StatelessWidget {
           ],
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Name",
-                      style: whiteTextStyle.copyWith(
-                        fontWeight: light,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Name",
+                        style: whiteTextStyle.copyWith(
+                          fontWeight: light,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "Kezia Anne",
-                      style: whiteTextStyle.copyWith(
-                          fontWeight: medium, fontSize: 20),
-                    ),
-                  ],
+                      Text(
+                        "Kezia Anne",
+                        style: whiteTextStyle.copyWith(
+                          fontWeight: medium,
+                          fontSize: 20,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
                 ),
+                Container(
+                  width: 24,
+                  height: 24,
+                  margin: const EdgeInsets.only(
+                    right: 6,
+                  ),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/logo.png"),
+                    ),
+                  ),
+                ),
+                Text(
+                  "Pay",
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
+                  ),
+                )
               ],
             ),
+            const SizedBox(
+              height: 41,
+            ),
+            Text(
+              "Balanced",
+              style: whiteTextStyle.copyWith(fontWeight: light),
+            ),
+            Text(
+              "IDR 280.000.000",
+              style: whiteTextStyle.copyWith(
+                fontSize: 26,
+                fontWeight: medium,
+              ),
+            ),
           ],
+        ),
+      );
+    }
+
+    Widget title() {
+      return Container(
+        margin: const EdgeInsets.only(top: 80),
+        child: Text(
+          "Big Bonus 🎉",
+          style: blackTextStyle.copyWith(
+            fontSize: 32,
+            fontWeight: semiBold,
+          ),
+        ),
+      );
+    }
+
+    Widget subTitle() {
+      return Container(
+        margin: const EdgeInsets.only(top: 10),
+        child: Text(
+          "We give you early credit so that\nyou can buy a flight ticket",
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      );
+    }
+
+    Widget startButton() {
+      return Container(
+        width: 220,
+        height: 55,
+        margin: const EdgeInsets.only(top: 50),
+        child: TextButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/main");
+          },
+          style: TextButton.styleFrom(
+            backgroundColor: kPrimaryColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(defaultRadius),
+            ),
+          ),
+          child: Text(
+            "Start Fly Now",
+            style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: medium),
+          ),
         ),
       );
     }
@@ -56,6 +145,9 @@ class BonusPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             bonusCard(),
+            title(),
+            subTitle(),
+            startButton(),
           ],
         ),
       ),
