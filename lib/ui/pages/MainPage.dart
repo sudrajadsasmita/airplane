@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
+import '../../widgets/CustomBottomNavigationItem.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -22,95 +23,23 @@ class MainPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    width: defaultMargin,
-                    height: defaultMargin,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/icon_home.png"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        borderRadius: BorderRadius.circular(18)),
-                  )
-                ],
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              CustomBottomNavigationItem(
+                imgUrl: "assets/images/icon_home.png",
+                isSelected: true,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    width: defaultMargin,
-                    height: defaultMargin,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/icon_home.png"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        borderRadius: BorderRadius.circular(18)),
-                  )
-                ],
+              CustomBottomNavigationItem(
+                imgUrl: "assets/images/icon_transaction.png",
+                isSelected: false,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  Container(
-                    width: defaultMargin,
-                    height: defaultMargin,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/icon_home.png"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        borderRadius: BorderRadius.circular(18)),
-                  )
-                ],
+              CustomBottomNavigationItem(
+                imgUrl: "assets/images/icon_card.png",
+                isSelected: false,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SizedBox(),
-                  Container(
-                    width: defaultMargin,
-                    height: defaultMargin,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/icon_home.png"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 2,
-                    decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        borderRadius: BorderRadius.circular(18)),
-                  )
-                ],
+              CustomBottomNavigationItem(
+                imgUrl: "assets/images/icon_settings.png",
+                isSelected: false,
               ),
             ],
           ),
@@ -121,7 +50,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Text("Main Page"),
+          const Text("Main Page"),
           customButtonNavigation(),
         ],
       ),
