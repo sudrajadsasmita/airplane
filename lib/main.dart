@@ -20,10 +20,7 @@ class MyApp extends StatelessWidget {
         "/get-started": (context) => const GetStartedPage(),
         "/sign-up": (context) => const SignUpPage(),
         "/bonus": (context) => const BonusPage(),
-<<<<<<< HEAD
         "/main": (context) => const MainPage(),
-=======
->>>>>>> ac316729d5c9fe43a3c834b5224fd1d38c374ca1
       },
     );
   }
