@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
@@ -16,8 +14,9 @@ class GetStartedPage extends StatelessWidget {
             height: double.infinity,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/images/image_get_started.png"),
-                  fit: BoxFit.cover),
+                image: AssetImage("assets/images/image_get_started.png"),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Center(
@@ -45,10 +44,16 @@ class GetStartedPage extends StatelessWidget {
                 Container(
                   width: 220,
                   height: 55,
-                  margin: const EdgeInsets.only(top: 50, bottom: 80),
+                  margin: const EdgeInsets.only(
+                    top: 50,
+                    bottom: 80,
+                  ),
                   child: TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, "/sign-up");
+                      Navigator.pushNamed(
+                        context,
+                        "/sign-up",
+                      );
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: kPrimaryColor,

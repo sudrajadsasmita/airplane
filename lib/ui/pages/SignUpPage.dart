@@ -127,7 +127,7 @@ class SignUpPage extends StatelessWidget {
       }
 
       Widget submitButton() {
-        return Container(
+        return SizedBox(
           width: double.infinity,
           height: 55,
           child: TextButton(
