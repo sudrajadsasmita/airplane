@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
+import '../../widgets/CustomButton.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class GetStartedPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "FLy like a Bird",
+                  "Fly like a Bird",
                   style: whiteTextStyle.copyWith(
                     fontSize: 32,
                     fontWeight: semiBold,
@@ -41,34 +42,13 @@ class GetStartedPage extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                Container(
+                CustomButton(
+                  title: "Get Started",
                   width: 220,
-                  height: 55,
-                  margin: const EdgeInsets.only(
-                    top: 50,
-                    bottom: 80,
-                  ),
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        "/sign-up",
-                      );
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: kPrimaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(defaultRadius),
-                      ),
-                    ),
-                    child: Text(
-                      "Get Started",
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 18,
-                        fontWeight: medium,
-                      ),
-                    ),
-                  ),
+                  margin: const EdgeInsets.only(top: 50, bottom: 80),
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/sign-up");
+                  },
                 ),
               ],
             ),
